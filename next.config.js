@@ -10,9 +10,12 @@ if (!process.env.WORDPRESS_API_URL) {
 
 
 module.exports = {
-  experimental: {
-    runtime: 'edge',
+ experimental: {
+    runtime: 'experimental-edge',
   },
+  reactStrictMode: true,
+  swcMinify: true,
+  
   images: {
     domains: [
       process.env.WORDPRESS_API_URL.match(/(?!(w+)\.)\w*(?:\w+\.)+\w+/)[0], // Valid WP Image domain.
